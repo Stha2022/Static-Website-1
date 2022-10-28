@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<body>
+    <style>
+        @import url(dashboard.css);
+    </style>
+    
+    <body>
+
+                
+            <!-------------- THIS IS WHERE THE NAVIGATION ends-------------------------->
+
+            <div class='container'>
+                
+                <div class='sidebar'>
+                  <div class='navigation-elm'><span class='nav-text'><i class="fa fa-fw fa-area-chart"></i><span class='text-short'>Dashboard</span> <span class='text-long'></span></span>
+                  </div>
+                 
+                  <div class='navigation-elm'><span class='nav-text'><i class="fa fa-fw fa-newspaper-o"></i><span class='text-short'>Donors</span> <span class='text-long'></span></span>
+                  </div>
+                  <div class='navigation-elm'><span class='nav-text'><i class="fa fa-fw fa-users"></i><span class='text-short'>Patients</span> <span class='text-long'></span></span>
+                  </div>
+                  <div class='navigation-elm'><span class='nav-text'><i class="fa fa-fw fa-comment"></i><span class='text-short'> <a href="alert/a" class="button">Donor Alert</a> </span> <span class='text-long'></span>
+                    <div class='update-number'>3</div>
+                    </span>
+                  </div>
+                  <div class='navigation-elm'><span class='nav-text'><i class="fa fa-fw fa-gear"></i><span class='text-short'>Settings</span></span>
+                  </div>
+              
+                </div>
+              
+              
+                <div class='linechart-element'><canvas id="linechart"> </canvas>
+                </div>
+                <div class='row'>
+                  <div class='piechart-element'>
+                    <div class='piechart-label'>
+                      <div class='label-heading'>Donate</div>
+                      <p class='small'>Less than 1% of South Africans are active blood donors. A unit of blood only lasts 42 days after donation and, for this reason, it is important for blood donors to donate regularly. Donors can give blood as often as every eight weeks.<span class='main-color'></span></p>
+                    </div>
+                    <div class='piechart-percent main-color'>68%</div>
+                    <div class='piechart-container'>
+              
+                      <canvas id="piechart"></canvas>
+                    </div>
+                  </div>
+                  <div class='piechart-element'>
+              
+                    <div class='piechart-label'>
+                      <div class='label-heading'>Book a drive</div>
+                      <p class='small'>There are many SANBS blood donation centres open to the public. To find the location nearest to you, click on our map. Or you may consider motivating your employer to host a blood drive at your offices for the convenience of all staff members.<span class='main-color'></span></p>
+                    </div>
+                    <div class='piechart-percent main-color'>39%</div>
+                    <div class='piechart-container'>
+                      <canvas id="piechart2"></canvas>
+                    </div>
+              
+                  </div>
+                  <div class='piechart-element'>
+                    <div class='piechart-label'>
+                      <div class='label-heading'>About Blood</div>
+                      <p class='small'>Blood is a precious resource that anyone can give to someone in need. We need your blood, with each donation you can save three lives. We have developed a short online quiz to help you determine if today is a good day for you to save some lives.
+                        <span class='main-color'></span></p>
+                    </div>
+                    <div class='piechart-percent main-color'>34%</div>
+                    <div class='piechart-container'>
+                      <canvas id="piechart3"></canvas>
+                    </div>
+              
+                  </div>
+                </div>
+                <div class='row'>
+              
+                  <div class='stats-element'>
+                    <div class='element-header'>Regional Performance</div>
+                    <div class='stats-container' id='stats-element'>
+                      <div class='map-container'>
+                        <div class='position-marker'></div>
+                        <div class='position-marker no2'></div>
+                        <div class='position-marker no3'></div>
+                        <div class='position-marker no4'></div>
+                        <div class='position-marker no5'></div>
+                        <div class='position-marker no6'></div>
+                      </div>
+                      <div class='stats-table'>
+                        <div class='table-header'>
+                          <div class='country-select'>SA</div>
+                          <div class='country-select'>BOT</div>
+                          <div class='country-select'>MOZ</div>
+                        </div>
+                        <table class='performance-table'>
+                          <tbody>
+                            <tr>
+                              <td></td>
+                              <td>Orders</td>
+                           
+                            </tr>
+                            <tr>
+                              <td class='table-desc'>Today</td>
+                           
+                            </tr>
+                            <tr>
+                              <td class='table-desc'>Week to Date</td>
+                           
+                            </tr>
+                            <tr>
+                              <td class='table-desc'>Month to Date</td>
+                        
+                            </tr>
+                            <tr>
+                              <td class='table-desc'>Year to Date</td>
+                              
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
+                  <div class='order-element'>
+                    <div class='element-header'></div>
+                    <div class='order-scroll up' id='order-scrollup'><i class="fa fa-chevron-up"></i></div>
+                    <div class='order-container' id='order-container'>
+              
+                   
+                </div>
+     
+              </body>

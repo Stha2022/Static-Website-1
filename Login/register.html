@@ -1,0 +1,101 @@
+<Doctype html>
+    <html>
+
+    <head>
+        <title>Social Donors</title>
+        <link rel="stylesheet" href="register.css">
+    </head>
+
+    <body>
+<!--start of navigation-->
+        <nav>
+         <img src="images/logo.jpg" class="logo"> 
+
+           <ul class="nav">
+            <li><a href="Landing Page/index.html">Home</a></li>
+            <li><a href="Login/login.html">LOGIN</a></li>
+            <li><a href="Register/register.html">REGISTRATION</a></li>
+            <li><a href="Dashboard/dashboard.html">DASHBOARD</a></li>
+            <li><a href="Blood types/Index.html">BLOOD TYPES</a></li>
+            <li class="list">  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn"> WHERE TO DONATE BLOOD</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#home">Boksburg</a>
+      <a href="#about">New York</a>
+      <a href="#contact">Hillbrow</a>
+      <a href="#contact">Vosloorus</a>
+      <a href="#contact">Soweto</a>
+      <a href="#contact">Marshalltown</a>
+      <a href="#contact">Selby</a>
+      <a href="#contact">Berea</a>
+      <a href="#contact">Bedfordview</a>
+      <a href="#contact">Kempton Park</a>
+      <a href="#contact">Denver</a>
+      <a href="#contact">Primrose</a>
+      <a href="#contact">Emjondolo</a>
+      <a href="#contact">Tembisa</a>
+      <a href="#contact">Vaal</a>
+    </div>
+    </div>
+  </div>
+</li>
+
+<!-- javascript -->
+<script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
+
+      
+</nav>
+        
+    <!-------------- THIS IS WHERE THE NAVIGATION ends-------------------------->
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600' rel='stylesheet' type='text/css'>
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.1.1/css/font-awesome.css" rel="stylesheet">
+
+<div class="testbox">
+  <h1>Registration</h1>
+
+  <form action="/">
+      <hr>
+    <div class="accounttype">
+      <input type="radio" value="None" id="radioOne" name="account" checked/>
+      <label for="radioOne" class="radio" chec>Personal</label>
+      <input type="radio" value="None" id="radioTwo" name="account" />
+      <label for="radioTwo" class="radio">Admin</label>
+    </div>
+  <hr>
+  <label id="icon" for="name"><i class="icon-envelope "></i></label>
+  <input type="text" name="name" id="name" placeholder="Email" required/>
+  <label id="icon" for="name"><i class="icon-user"></i></label>
+  <input type="text" name="name" id="name" placeholder="Name" required/>
+  <label id="icon" for="name"><i class="icon-shield"></i></label>
+  <input type="password" name="name" id="name" placeholder="Password" required/>
+  <div class="gender">
+    <input type="radio" value="None" id="male" name="gender" checked/>
+    <label for="male" class="radio" chec>Male</label>
+    <input type="radio" value="None" id="female" name="gender" />
+    <label for="female" class="radio">Female</label>
+   </div> 
+
+   <p>By clicking Register, you agree to be a part of us<a href="#"></a>.</p>
+   <a href="#" class="button">Register</a>
+  </form>
+</div>

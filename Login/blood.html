@@ -1,0 +1,70 @@
+<Doctype html>
+    <html>
+
+    <head>
+        <title>Social Donors</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <body>
+<!--start of navigation-->
+        <nav>
+         <img src="images/logo.jpg" class="logo"> 
+
+           <ul class="nav">
+            <li><a href="Login.html">LOGIN</a></li>
+            <li><a href="">DASHBOARD</a></li>
+            <li><a href="BLOOD TYPES.html">BLOOD TYPES</a></li>
+            <li><a href="">SOCIAL DONOR SERVICES</a></li>
+            <li class="list">  <div class="dropdown">
+    <button onclick="myFunction()" class="dropbtn"> WHERE TO DONATE BLOOD</button>
+    <div id="myDropdown" class="dropdown-content">
+      <a href="#home">Boksburg</a>
+      <a href="#about">New York</a>
+      <a href="#contact">Hillbrow</a>
+      <a href="#contact">Vosloorus</a>
+      <a href="#contact">Soweto</a>
+      <a href="#contact">Marshalltown</a>
+      <a href="#contact">Selby</a>
+      <a href="#contact">Berea</a>
+      <a href="#contact">Bedfordview</a>
+      <a href="#contact">Kempton Park</a>
+      <a href="#contact">Denver</a>
+      <a href="#contact">Primrose</a>
+      <a href="#contact">Emjondolo</a>
+      <a href="#contact">Tembisa</a>
+      <a href="#contact">Vaal</a>
+    </div>
+    </div>
+  </div>
+</li>
+
+<!-- javascript -->
+<script>
+  /* When the user clicks on the button, 
+  toggle between hiding and showing the dropdown content */
+  function myFunction() {
+    document.getElementById("myDropdown").classList.toggle("show");
+  }
+  
+  // Close the dropdown if the user clicks outside of it
+  window.onclick = function(event) {
+    if (!event.target.matches('.dropbtn')) {
+      var dropdowns = document.getElementsByClassName("dropdown-content");
+      var i;
+      for (i = 0; i < dropdowns.length; i++) {
+        var openDropdown = dropdowns[i];
+        if (openDropdown.classList.contains('show')) {
+          openDropdown.classList.remove('show');
+        }
+      }
+    }
+  }
+  </script>
+
+      
+</nav>
+        
+    <!-------------- THIS IS WHERE THE NAVIGATION ends-------------------------->
+
+    <img src="images/blood type.png" width="100%" height="260%">

@@ -1,0 +1,108 @@
+jQuery(document).ready(function($){
+
+    set_comment_avatars();
+
+    var gallery = [];
+
+    $('.submit-img').on('click',function(){
+
+        var $imgs = $(this).parent().find('.submit-img');
+
+        $($imgs).each(function(i){
+            gallery.push( $(this).data('url') );
+        });
+
+        console.log(gallery);
+
+    });
+
+    function showGallery(){
+
+        var temp = '';
+        
+        temp += '<div class="gallery-screen"><div>';
+        temp += '<div class="gallery-modal">';
+        temp += '<div>';
+        
+    }
+
+    function set_comment_avatars() {
+
+        $(subAjax.user_pics).each( function(i){
+
+            $('.comment-author img').each( function(){
+    
+                var $link = $(this).siblings('cite.fn').find('.url');
+                var username = $link.html();
+                
+                if( subAjax.user_pics[i].username == username ){
+                    
+                    $link.html(subAjax.user_pics[i].full_name);
+                    $link.css('cursor','default');
+
+                    $link.on('click',function(){ return false;});
+
+                    $(this).attr('src',subAjax.user_pics[i].url); 
+                    $(this).attr('srcset',subAjax.user_pics[i].url); 
+
+                }
+    
+            });
+    
+        });
+    
+    }
+
+    // Assessor actions
+
+    $('#set-redo').on('click',function(){
+
+        if(!confirm('Are you sure you want set this assessment to redo?')){ return; }
+
+        $button = $(this);
+
+        $button.text('Setting redo...');
+
+        redo_btn_ajax();
+
+    });
+
+    console.log('Subb Ajax', subAjax);
+
+    function redo_btn_ajax(data,count) {
+
+        waitloader('Setting redo..');
+
+        $.ajax({
+            url: subAjax.url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                status: 'redo',
+                post_id: subAjax.post_id,
+                form_post_id: subAjax.form_post_id,
+                action: 'lfk_set_assessment_status',
+                _ajax_nonce: subAjax.nonce
+            }
+        }).done( function(resp){
+
+            waitloader(false);
+            
+            console.log(resp);
+
+            window.location.reload();
+
+        }).fail(function(err){
+
+            ajax_retry({
+                count,
+                callback: redo_btn_ajax,
+                err: 'Could not set redo'
+            });
+
+        });  
+        
+    }
+
+
+});

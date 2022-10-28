@@ -1,0 +1,30 @@
+jQuery(document).ready( function($){
+
+    console.log('Search ON!!');
+    
+    $('.search-input').on('keypress',function(e) {
+
+        if(e.which == 13) { runSearch($(this).val() ) }
+
+    });
+
+    $('.search-btn').on('click', function(){
+
+        runSearch($(this).siblings('.search-input').val());
+
+    });
+
+    function runSearch(term){
+
+        var strValid = /\S/.test(term);
+
+        if (!strValid) {
+            alert('Please enter valid search term!');
+            return;
+        }
+
+        window.location = '/?s=' + encodeURI( term.toLowerCase() );
+
+    }
+    
+});

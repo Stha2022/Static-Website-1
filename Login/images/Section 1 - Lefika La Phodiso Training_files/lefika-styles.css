@@ -1,0 +1,265 @@
+.home-header h1.ct-headline {
+  font-size: 11rem !important;
+  max-width: 100%;
+  font-size: 10rem !important;
+  font-size: clamp(5rem, calc(5rem + ((1vw - 0.32rem) * 5.7292)), 10.5rem) !important;
+}
+
+/*---------- Stretch image ----------*/
+.stretch-img-right {
+  background-color: #ccc;
+  background-size: cover !important;
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 100%;
+  min-height: 400px !important;
+  width: 100%;
+  width: 50vw;
+}
+
+.stretch-img-right.img-sqr {
+  width: 100% !important;
+}
+
+/*---------- Stretch column ----------*/
+.col-stretch-right {
+  width: 100% !important;
+  width: 50vw !important;
+}
+
+/*---------- Repeater Pageanation ----------*/
+.oxy-repeater-pages-wrap {
+  margin-top: 40px !important;
+  width: 100% !important;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 2.8489855rem !important;
+  margin-top: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 1.0417)), 3rem) !important;
+}
+
+.oxy-repeater-pages-wrap .page-numbers {
+  border: 2px solid #009eb1;
+  background-color: #009eb1;
+  color: #ffffff;
+  border-radius: 8px;
+  margin-left: 8px;
+  margin-right: 8px;
+  padding: 8px 16px;
+}
+
+@media (max-width: 992px) {
+  .oxy-repeater-pages-wrap .page-numbers {
+    padding: 6px 14px;
+  }
+}
+
+.oxy-repeater-pages {
+  font-size: 1.4rem !important;
+  font-size: clamp(1.35rem, calc(1.35rem + ((1vw - 0.32rem) * 0.2604)), 1.6rem) !important;
+}
+
+.oxy-repeater-pages a.page-numbers {
+  background-color: transparent;
+  color: #009eb1;
+}
+
+.oxy-repeater-pages span.current {
+  background-color: #009eb1;
+}
+
+.home-prog-wrap .oxy-repeater-pages-wrap,
+.latest-news-wrap .oxy-repeater-pages-wrap {
+  display: none !important;
+}
+
+/*---------- Underlines ----------*/
+.lfk-undr-vert,
+.lfk-undr-vert-blocked,
+.lfk-undr-block {
+  min-width: 1px !important;
+  min-height: 1px !important;
+}
+
+.lfk-undr-actions {
+  width: 185px !important;
+}
+
+.lfk-undr-actions .lfk-undr-block:nth-child(1) {
+  width: 30% !important;
+}
+
+.lfk-undr-actions .lfk-undr-block:nth-child(2) {
+  width: 65% !important;
+  background-color: #9ed4d8;
+}
+
+.dark-section .lfk-undr .lfk-undr-block:nth-child(2) {
+  background-color: #9ed4d8 !important;
+}
+
+.title-cont-center .lfk-undr {
+  margin-left: 0 !important;
+}
+
+/*---------- Sections ----------*/
+.intro-section .ct-section-inner-wrap {
+  padding-top: 40px !important;
+  padding-top: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 2.0833)), 4rem) !important;
+}
+
+.intro-section::before {
+  content: '';
+  position: absolute;
+  top: 119px;
+  left: -52px;
+  width: 170px;
+  height: 347px;
+  background-image: url("https://lefikalaphodiso.co.za/wp-content/uploads/2021/09/splatts-min.png");
+  background-size: contain;
+}
+
+.intro-section-2::before {
+  content: '';
+  position: absolute;
+  top: 119px;
+  left: -52px;
+  width: 170px;
+  height: 347px;
+  background-image: url("https://training.lefikalaphodiso.co.za/wp-content/uploads/2021/11/splatts-min.png");
+  background-size: contain;
+}
+
+.bottom-splat::before {
+  content: '';
+  position: absolute;
+  bottom: -117px;
+  right: 0;
+  width: 176px;
+  height: 238px;
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  background-image: url("https://lefikalaphodiso.co.za/wp-content/uploads/2021/09/splatts-min-2.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 2;
+}
+
+.dark-section {
+  background-color: #009eb1;
+}
+
+.dark-section h1, .dark-section h2, .dark-section h3, .dark-section h4, .dark-section h5, .dark-section h6, .dark-section .ct-text-block {
+  color: #ffffff !important;
+}
+
+@media (max-width: 1279px) {
+  .dark-section-pc {
+    background-color: #009eb1;
+  }
+  .dark-section-pc h1, .dark-section-pc h2, .dark-section-pc h3, .dark-section-pc h4, .dark-section-pc h5, .dark-section-pc h6, .dark-section-pc .ct-text-block {
+    color: #ffffff !important;
+  }
+}
+
+@media (max-width: 992px) {
+  .dark-section-lap {
+    background-color: #009eb1;
+  }
+  .dark-section-lap h1, .dark-section-lap h2, .dark-section-lap h3, .dark-section-lap h4, .dark-section-lap h5, .dark-section-lap h6, .dark-section-lap .ct-text-block {
+    color: #ffffff !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .dark-section-tab {
+    background-color: #009eb1;
+  }
+  .dark-section-tab h1, .dark-section-tab h2, .dark-section-tab h3, .dark-section-tab h4, .dark-section-tab h5, .dark-section-tab h6, .dark-section-tab .ct-text-block {
+    color: #ffffff !important;
+  }
+}
+
+@media (max-width: 479px) {
+  .dark-section-mobi {
+    background-color: #009eb1;
+  }
+  .dark-section-mobi h1, .dark-section-mobi h2, .dark-section-mobi h3, .dark-section-mobi h4, .dark-section-mobi h5, .dark-section-mobi h6, .dark-section-mobi .ct-text-block {
+    color: #ffffff !important;
+  }
+}
+
+@media (min-width: 991px) {
+  .involved-content {
+    padding-top: 2.8489855rem !important;
+    padding-top: clamp(2rem, calc(2rem + ((1vw - 0.32rem) * 1.0417)), 3rem) !important;
+  }
+}
+
+@media (max-width: 1560px) {
+  .intro-section::before,
+  .intro-section-2::before {
+    content: none;
+  }
+}
+
+@media (max-width: 991px) {
+  .bottom-splat::before {
+    content: none;
+  }
+  .intro-section .col-container .col-lg-5 {
+    display: none !important;
+  }
+}
+
+/*---------- WooCommerce ----------*/
+.oxy-woo-products > .page-title,
+.oxy-woo-products > .term-description {
+  display: none !important;
+}
+
+h2.woocommerce-loop-product__title {
+  color: #009eb1 !important;
+  font-size: 1.9396105rem !important;
+  font-size: clamp(1.6rem, calc(1.6rem + ((1vw - 0.32rem) * 0.4167)), 2rem) !important;
+}
+
+.woocommerce-Price-amount {
+  color: #c28c45 !important;
+  font-family: inherit;
+  font-size: 2.9942979999999997rem !important;
+  font-size: clamp(2.4rem, calc(2.4rem + ((1vw - 0.32rem) * 0.7292)), 3.1rem) !important;
+}
+
+.woocommerce p {
+  font-size: 1.3924615rem !important;
+  font-size: clamp(1.35rem, calc(1.35rem + ((1vw - 0.32rem) * 0.0521)), 1.4rem) !important;
+}
+
+.woocommerce ul.products li.product a img,
+.woocommerce .attachment-woocommerce_thumbnail {
+  max-width: 250px !important;
+}
+
+.category-picker .btn {
+  padding: 4px 10px !important;
+}
+
+.woocommerce h1.product_title,
+.woocommerce-Tabs-panel h2 {
+  color: #009eb1 !important;
+}
+
+.woocommerce section.related.products h2 {
+  color: #c28c45 !important;
+}
+
+.woocommerce div.product div.images img {
+  max-width: 360px;
+}
+
+/*---------- Team Members ----------*/
+.member-details h6.ct-headline {
+  max-width: 100% !important;
+}
+/*# sourceMappingURL=lefika-styles.css.map */

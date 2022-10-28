@@ -1,0 +1,75 @@
+body{
+  background: white;
+  text-align: center;
+  color: maroon;
+}
+
+.container{
+  background: white;
+  padding: 20px 29px;
+  width: 300px;
+  border: 2px solid grey;
+  border-radius: 25px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  position: absolute;
+  font-family: 'Montserrat';
+  transition: 1.25s;
+}
+
+.container:hover{
+  box-shadow: 20px 20px 20px 20px;
+}
+
+hr{
+  border: 0.5px solid black;
+  width: 280px;
+}
+
+.btn{
+  background: maroon;
+  color: white;
+  padding: 15px;
+  width: 290px;
+  border-radius: 20px;
+  border: 2px solid maroon;
+  font-family: 'Montserrat';
+  cursor: pointer;
+  outline: none;
+  transition: 0.25s;
+}
+
+a{
+  color: maroon;
+  text-decoration: none;
+  transition: 0.25s;
+  font-size: 14.5px;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+.collapsible {
+  background-color: maroon;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+}
+
+.active, .collapsible:hover {
+  background-color: maroon;
+}
+
+.content {
+  padding: 0 18px;
+  display: none;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}

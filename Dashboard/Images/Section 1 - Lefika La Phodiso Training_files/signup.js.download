@@ -1,0 +1,85 @@
+jQuery(document).ready( function($){
+
+    checkAutoOpen(signupData.openSignup);
+
+    $('#lfk-signup-form').on('submit',function(){
+
+        var clientData = {
+            first_name : $(this).find('#name').val(),
+            last_name : $(this).find('#lastname').val(),
+            email : $(this).find('#email').val(),
+            phone : $(this).find('#phone').val(),
+        };
+
+        signup_ajax(clientData);
+        
+        return false;
+
+    });
+
+
+    function signup_ajax(clientData,count){
+
+        $.ajax({
+            url: signupData.url,
+            type: 'POST',
+            dataType: 'json',
+            data: {
+                clientData,
+                action: 'lfk_add_new_lead',
+                _ajax_nonce: signupData.nonce
+            }
+        }).done( function(resp){
+
+            console.log(resp);
+
+            if(resp.success){
+
+                alert('Submission Successfull!');
+                
+                $(this).find('input').each(function(){ 
+                    $(this).val('');
+                });
+
+                $('.signup-form-area').css('display','none');
+                $('.signup-form-success').css('display','flex');
+
+            } else {
+                alert('JSON Error: ' + resp);
+            }
+
+        }).fail(function(err){
+
+            ajax_retry({
+                count,
+                callback: signup_ajax,
+                data: clientData,
+                err: 'Could not complete signup'
+            });
+
+        });
+
+
+    }
+
+
+    function checkAutoOpen(open){
+
+        if( open == 'false' ){ return; }
+
+        setTimeout(function(){
+
+            $('.signup-btn').first().click();
+
+        },1200);
+        
+    }
+
+    // Close modal
+    $('.signup-confirm').on('click', function(){
+
+        oxyCloseModal();
+        
+    })
+
+});

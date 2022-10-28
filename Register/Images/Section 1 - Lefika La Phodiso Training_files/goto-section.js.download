@@ -1,0 +1,9 @@
+jQuery(document).ready(function($){
+
+    $('.section-select').on('change',function(){
+
+        window.location.href = $(this).val();
+
+    });
+
+});

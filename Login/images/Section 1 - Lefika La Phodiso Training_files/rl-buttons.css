@@ -1,0 +1,109 @@
+/* Buttons ------------------------------------------------*/
+
+.ct-div-block.btn {
+
+	 background-color: #009eb1 ;
+	 padding-top: 0.8546875rem ; padding-top: clamp(0.6000000000000001rem, calc(0.6000000000000001rem + ((1vw - 0.32rem) * 0.3125)), 0.9rem)!important ;
+	 padding-bottom: 0.8546875rem ; padding-bottom: clamp(0.6000000000000001rem, calc(0.6000000000000001rem + ((1vw - 0.32rem) * 0.3125)), 0.9rem)!important ;
+	 padding-left: 1.5546875rem ; padding-left: clamp(1.3rem, calc(1.3rem + ((1vw - 0.32rem) * 0.3125)), 1.6rem)!important ;
+	 padding-right: 1.5546875rem ; padding-right: clamp(1.3rem, calc(1.3rem + ((1vw - 0.32rem) * 0.3125)), 1.6rem)!important ;
+	 color: #fff ;
+	 border-width: 2px ;
+	 border-style: solid ;
+	 border-color: #009eb1 ;
+	 border-radius: 5px ;
+	 font-size: 1.2546875rem !important; font-size: clamp(1rem, calc(1rem + ((1vw - 0.32rem) * 0.3125)), 1.3rem)!important ;
+	 font-weight: 500 ;
+	 letter-spacing: 1px ;
+	 text-transform: uppercase ;
+	 cursor: pointer ;
+	 transition: all 0.25s ease ;
+	 display: flex !important;
+	 flex-direction: row !important;
+	 justify-content: center !important;
+	 align-items: center !important;
+
+}
+
+.ct-div-block.btn-hollow {
+
+	 background-color: rgba(0,0,0,0) ;
+	 color: #009eb1 ;
+
+}
+
+.btn-hollow:hover {
+
+	 background-color: #009eb1;
+	 color: #fff;
+
+}
+
+.ct-div-block.btn-sec {
+
+	 border-color: #c28c45 ;
+	 background-color: #c28c45 ;
+	 color: #fff ;
+
+}
+
+.ct-div-block.btn-sec.btn-hollow {
+
+	 background-color: rgba(0,0,0,0) ;
+	 color: #c28c45 ;
+
+}
+
+.btn-sec.btn-hollow:hover {
+
+	 background-color: #c28c45;
+	 color: #fff;
+
+}
+
+.ct-div-block.btn-inv {
+
+	 border-color: #fff ;
+	 background-color: #fff ;
+	 color: #009eb1 ;
+
+}
+
+.btn-inv:hover {
+
+	 border-color: #009eb1;
+	 background-color: #009eb1;
+	 color: #fff;
+
+}
+
+.ct-div-block.btn-inv.btn-sec {
+
+	 color: #c28c45 ;
+
+}
+
+.btn-inv.btn-sec:hover {
+
+	 border-color: #c28c45;
+	 background-color: #c28c45;
+	 color: #fff;
+
+}
+
+.ct-div-block.btn-white-hollow {
+
+	 border-color: #fff ;
+	 background-color: rgba(0,0,0,0) ;
+	 color: #fff ;
+
+}
+
+.ct-div-block.btn-wide {
+
+	 width: 100% ;
+
+}
+
+/* End of: Buttons ------------------------------------------------*/
+

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<style>
+    @import url(alert.css);
+</style>
+
+<div class="messages">
+    <div class="bill">
+    <i class="fas fa-bell"></i>
+      <!-- THE only benifit of bootstrap -->
+    <span class="badge badge-pill badge-danger"></span>   
+      <!-- end of THE only benifit of bootstrap -->
+    </div>
+    <div class="message">
+      
+      <div class="message-photo">
+        <img src="images/logo (2).jpg" alt="">
+      </div>
+  
+      <div class="message-details">
+        <span> Social Donors</span>
+        <span>Your blood drive has been booked for the 7th of September 2022</span>
+        
+        <span> 2 Hours ago</span>
+      </div>
+      
+      <div class="message-action">
+        <i class="far fa-envelope"></i>
+      </div>
+    </div>
+    <div class="message">
+      
+      <div class="message-photo">
+        <img src="images/Doc.jpg" alt="">
+      </div>
+  
+      <div class="message-details">
+        <span>Doctor Shrukah</span>
+        <span>Your blood results have arrived.Your blood type is +A.</span>
+        <span> 14 Hours ago</span>
+      </div>
+          <div class="message-action">
+        <i class="far fa-envelope"></i>
+      </div>
+    </div>
+    <div class="message">
+      
+      <div class="message-photo">
+        <img src="images/Doc.jpg" alt="">
+      </div>
+  
+      <div class="message-details">
+        <span>Doctor Shrukah</span>
+        <span>Your message was sent</span>
+        <span> 23 Hours ago</span>
+      </div>
+          <div class="message-action">
+        <i class="far fa-envelope"></i>
+      </div>
+    </div>
+  </div>
+  <br>
+  
+  
+  <!-- ::TODO:: make it react component -->
+  
+<!--collapse button-->
+  <style>
+    .collapsible {
+      background-color: maroon;
+      color: white;
+      cursor: pointer;
+      padding: 18px;
+      width: 10%;
+      border: none;
+      text-align: left;
+      outline: none;
+      font-size: 15px;
+      margin-left: 45%;
+    }
+    
+    .active, .collapsible:hover {
+      background-color: maroon;
+    }
+    
+    .content {
+      padding: 0 18px;
+      display: none;
+      overflow: hidden;
+      background-color: #f1f1f1;
+    }
+    </style>
+    </head>
+    <button type="button" class="collapsible">Open Collapsible</button>
+    <div class="content">
+      <center><p><a href="index.html" class="button">Return to Home</a></p></center>
+    </div>
+
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+        
+        for (i = 0; i < coll.length; i++) {
+          coll[i].addEventListener("click", function() {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+              content.style.display = "none";
+            } else {
+              content.style.display = "block";
+            }
+          });
+        }
+        </script>

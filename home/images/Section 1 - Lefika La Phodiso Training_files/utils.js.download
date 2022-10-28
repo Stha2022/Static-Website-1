@@ -1,0 +1,135 @@
+
+// Wait loader
+function waitloader(the_text){
+	
+	var $loader = jQuery('.wait-loader');
+	
+	if(!the_text){ $loader.css('display','none'); return; }
+	
+	jQuery('.wait-loader-text').text(the_text);
+
+	$loader.css('display','flex');
+	$loader.css('flex-direction','row');
+	
+}
+
+// Retry Ajax
+
+function ajax_retry(settings) {
+
+	if(typeof settings.count == 'undefined'){ settings.count = 1;}
+	if(typeof settings.attempts == 'undefined'){ settings.attempts = 7;}
+	if(typeof settings.data == 'undefined'){ settings.data = false;}
+
+	if( settings.count <= settings.attempts ){
+
+		if( tryInterval ){ clearInterval(tryInterval); }
+
+		var tryInterval = setTimeout(function(){
+
+			console.log('Retry number: ' + settings.count);
+			settings.callback(settings.data,settings.count + 1);
+
+		},4000);
+
+	} else {
+
+		waitloader(false);
+
+		if( settings.err ){ 
+			settings.err = ' ' + settings.err ; 
+		} else { 
+			settings.err = ''; 
+		}
+
+		alert("Something went wrong!" + settings.err + ". Please check your internet connection or try again later.");
+	
+	}
+
+	
+}
+
+function $is_red_user(){
+	    
+    if( (localStorage.getItem("is_redline") !== null) ){
+        console.log('Redline user detected!');
+		return true;
+    } else {
+		return false;
+	}
+
+}
+
+
+// Modal click off (Oxygen) ==================================//
+
+jQuery(document).ready(function($){
+
+    modalClickOff($);
+
+});
+
+
+function modalClickOff($){
+
+	var exitReady = true;
+	
+	$modalInputs = $('.ct-modal input,.ct-modal textarea,.ct-modal option,.ct-modal select');
+	
+    $modalInputs.on('focus mousedown',function(){ exitReady = false; });
+    $modalInputs.on('focusout mouseup',function(){ exitReady = true; });
+
+	$('body').on('click','.oxy-modal-backdrop.live',function(e){
+
+		var $el = $(e.target); // Get exact target
+
+		if( $el.hasClass('oxy-modal-backdrop') ){
+
+			// if(! $el.find('.ct-modal').hasClass('input-modal') ) { return;}
+
+			if( exitReady ){ 
+
+				console.log('Exitready!'); 
+				$closeOxyModal();
+	
+			} else {
+	
+				console.log('Exit NOT ready!'); 
+
+			}
+		}
+
+	});
+
+
+}
+
+function $closeOxyModal(){
+
+	if( $def(oxyCloseModal) ) { oxyCloseModal(); }
+
+}
+
+
+
+// Misc utils ============================//
+
+function $if(test,postive,negetive){
+
+	var result;
+
+	if(test){ result = postive; } else { result = negetive; }
+
+	if(result instanceof Function){
+		result();
+	} else {
+		return result;
+	}
+
+}
+
+function $def(item){
+
+	return typeof item !== 'undefined';
+
+}

@@ -1,0 +1,140 @@
+jQuery(document).ready(function($){
+
+    if(typeof backData == 'undefined'){ return; }
+
+    console.log('Back Data: ', backData);
+
+    var section_points;
+    var back_link = false;
+
+    // If on section page ================//
+    
+    if(backData.post == 'section'){
+
+        //  Capture Section CheckPoint
+    
+        section_points = get_section_points();
+
+        if( section_points ){
+
+            // console.log('Sects found');
+
+            var found_index = false;
+
+            $(section_points).each( function(i){
+    
+                if( parseInt(section_points[i].section_id) == parseInt(backData.section_id) ){
+                    found_index = i;
+                    // console.log('Entry Found: ', section_points[found_index]);
+                }
+                
+            });
+
+            if( found_index !== false ){
+                section_points[found_index].last_url = backData.last_url;
+            } else {
+                section_points.push({ section_id : parseInt(backData.section_id), last_url :  backData.last_url });
+            }
+
+    
+        } else {
+
+            // console.log('No sects');
+            
+            section_points = [
+                { section_id : backData.section_id, last_url :  backData.last_url }
+            ]; 
+    
+        }
+    
+        localStorage.setItem('section_points', JSON.stringify(section_points) );
+
+        // console.log('NEW VALUE: ', localStorage.getItem('section_points'));
+
+    }
+
+
+    // If on form page ================//
+
+    if(backData.post == 'form'){
+        
+        $('.back-to-section').on('click',function(){
+            
+            section_points = get_section_points();
+            
+            if( section_points ){
+                
+                $(section_points).each( function(i){
+        
+                    if( parseInt(section_points[i].section_id) == parseInt(backData.parent_section_id) ){
+                        back_link = backData.siteUrl + section_points[i].last_url;
+                    }
+                    
+                });
+                
+            } else {
+                
+                back_link = backData.parent_section_link;
+                
+            }
+            
+            if( back_link !== false && back_link != '' && back_link != null  ){
+                
+                window.location.href = back_link;
+                
+            } else if( typeof backData.siteUrl != 'undefined' ) {
+                
+                window.location.href = backData.siteUrl + '/student-dashboard/';   
+                
+            } else {
+                
+                window.location.href = '/';   
+                
+            }
+            
+            // console.log(back_link);
+            // console.log(get_section_points());
+            // console.log(backData.parent_section_link);
+            
+        });
+        
+        
+    }
+
+    // If on form page from archive ================//
+
+    if( backData.post == 'archive_form' ){
+        
+        $('.back-to-section').on('click',function(){
+
+            window.location.href = backData.backUrl;
+
+        });
+
+    }
+    
+    // Utils ====================//
+
+    function get_section_points() {
+
+        sect_points = localStorage.getItem('section_points');
+        
+        // console.log('Sect Points: ', sect_points);
+
+        if( sect_points === null ){ console.log('Sects Null'); return false; }
+
+        sect_points = JSON.parse(sect_points);
+
+        // console.log('Sect Points Parsed: ', sect_points);
+                
+        if( !Array.isArray(sect_points) ){ console.log('Sects not array'); return false; }
+       
+        if( sect_points.length < 1 ){ console.log('Sects no length'); return false; }
+
+        return sect_points;
+        
+    }
+
+
+
+});

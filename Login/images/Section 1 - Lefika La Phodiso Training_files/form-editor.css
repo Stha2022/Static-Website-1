@@ -1,0 +1,615 @@
+
+/* Form Styles */
+
+#form-area,
+.form-area{
+    position: relative;
+    padding: 20px;
+    width: 100%;
+    /* max-width: 700px; */
+    margin: 0 auto;
+}
+
+
+.rl-custom-form{
+    width: 100%;
+}
+
+.rl-custom-form label,
+.mock-label 
+{
+    line-height: 26px;
+    margin-bottom: 10px;
+}
+
+.rl-custom-form label:not(.choice-label),
+.mock-label {
+    font-weight: 600;
+}
+
+.rl-custom-form input,
+.rl-custom-form select,
+.rl-custom-form textarea, 
+.mock-input, 
+.mock-select, 
+.mock-textarea
+{
+    display: block;
+    width: 100%;
+    font: inherit;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 10px 13px;
+    margin-bottom: 15px;
+    color: #444;
+}
+
+.mock-input, 
+.mock-select, 
+.mock-textarea{
+    color: transparent;
+    margin-bottom: 0;
+}
+
+
+.rl-custom-form textarea,
+.mock-textarea
+{
+    height: 150px;
+}
+
+.rl-custom-form select {
+    display: block;
+    width: 50%;
+    min-width: 200px;
+    padding: 8px;
+}
+
+.rl-custom-form input[type="submit"],
+.rl-custom-form input[type="button"] {
+    width: auto;
+    background: #c28c45;
+    color: #fff;
+    padding: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    border: none;
+}
+.rl-custom-form input[type="submit"].final-step {
+    background: #c28c45;
+}
+
+
+.rl-custom-form input[type="radio"], 
+.rl-custom-form input[type="checkbox"]
+{
+    display: inline-block;
+    width: auto;
+    margin-right: 5px;
+}
+
+.checks-title{
+    
+    display: block;
+    margin-top: 35px;
+    margin: 0;
+    font-weight: 600;
+
+}
+
+
+/*  Editor styles --------------------------*/
+
+#rl-form-editor.postbox .inside {
+    padding: 0;
+}
+
+#creator-wrap{
+
+    width: 100%;
+    height: auto;
+
+    margin: 0 auto;
+
+    background: #fff;
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+
+}
+
+#creator-wrap *, #creator-wrap *::before, #creator-wrap *::after{ 
+    box-sizing: border-box;
+    transition: all .2s ease;
+}
+
+#creator-wrap h1,
+#creator-wrap h2,
+#creator-wrap h3,
+#creator-wrap h4,
+#creator-wrap h5,
+#creator-wrap h6{ line-height: 1.1; margin: 0;}
+
+*[draggable="true"],
+.handle 
+{
+    cursor: move;
+}
+
+#main-actions-area{
+    width: 100%;
+    padding: 15px 12px 20px 12px;
+    border-bottom: 1px solid #c3c4c7;
+
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#creator-cont {
+
+    width: 100%;
+
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: space-between;
+
+}
+
+#fields-area {
+    border-right: 1px solid #c3c4c7;
+    width: 185px;
+    padding: 20px;
+    padding-left: 12px;
+}
+
+#options-area {
+    border-left: 1px solid #c3c4c7;
+    width: 250px;
+    padding: 20px;
+}
+
+#options-area > div {
+    padding: 20px;
+}
+
+#form-area {
+    width: calc(100% - 435px);
+    padding: 20px 30px;
+    height: 600px;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background: #ffffff;
+}
+
+#form-area.active {
+    background: #009fb12d;
+}
+
+#form-area.active * {
+    opacity: 0.9;
+    background-color: transparent;  
+}
+
+.app-areas {
+    position: relative;
+}
+
+.app-areas > * {
+    display: block;
+}
+
+/* Field Items ------------------------------------------------ */
+
+.field-item {
+    position: relative;
+    border-radius: 5px;
+    width: 100%;
+    padding: 15px;
+    box-shadow: 1px 1px 3px #ccc;
+    margin-bottom: 10px;
+    cursor: pointer;
+    overflow: hidden;
+    border: 1px solid #fff;
+}
+
+.field-item .dashicons{
+    margin-right: 10px;
+}
+
+/* .field-item::before{
+    content: '+';
+    width: 10px;
+    height: 10px;
+    margin-right: 10px;
+} */
+
+/* Dropped Items ------------------------------------------------ */
+
+.field-mock-item {
+    position: relative;
+}
+
+.field-mock-item .mock-inner {
+
+    position: relative;
+    display: block;
+
+    padding: 20px;
+    border: 1px dotted #ccc;
+    border-radius: 6px;
+    background: #fff;
+
+    margin-bottom: 10px;
+
+    /* margin-bottom: 10px; */
+    cursor: move;
+}
+
+.field-mock-item .mock-inner::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: transparent;
+}
+
+div.field-mock-item.recycled {
+    display: none !important;
+}
+
+.mock-delete {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 20px;
+    height: 20px;
+    background: #dfdfdf;
+    color: #fff;
+    cursor: pointer;
+    z-index: 9999;
+    font-size: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mock-delete:hover{
+    background: #bb0000;
+    color: #fff;
+}
+
+.drop-area {
+    width: 100%;
+    height: 15px;
+    background: transparent;
+    /* background: turquoise; */
+}
+
+.drop-area.drop-first {
+    margin-top: -15px;
+}
+
+.drop-area.active {
+
+    padding: 10px 0 ;
+    width: 100%;
+    height: auto;
+
+}
+
+.drop-area.active::after {
+    content: 'INSERT HERE';
+    width: 100%;
+    border: 2px dotted #ccc;
+    border-radius: 10px;
+    color: #ccc;
+    letter-spacing: 1px;
+    padding: 15px;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.mock-select{
+    color: #3c434a;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.multi-opt,
+.select-opt {
+    width: 100%;
+    padding: 8px;
+    background: whitesmoke;
+    margin-top: 6px;
+    border-radius: 5px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+}
+
+.multi-opt::before {
+
+    content: '';
+    background: #fff;
+    width: 10px;
+    height: 10px;
+    border: 1px solid #555;
+    border-radius: 5px;
+    margin-right: 10px;
+
+}
+
+.multi-opt.boxes::before {
+    border-radius: 0;
+}
+
+
+.mock-field-excluded {
+    background: #ccc;
+    border-color: #ccc;
+    opacity: .3;
+}
+
+/* Options ------------------------------------------------ */
+
+.options-wrap {
+    display: none;
+    position: absolute;
+    top:0;bottom:0;
+    left:0;right:0;
+    background: #fff;
+    z-index: 3;
+}
+
+.no-options-wrap {
+
+    position: absolute;
+    top:0;bottom:0;
+    left:0;right:0;
+    background: #fff;
+    z-index: 1;
+
+    text-align: center;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    color: #c3c4c7 !important;
+}
+
+.no-options-wrap h4 {
+
+    color: #c3c4c7;
+}
+
+.option {
+    /* border-bottom:  1px solid #c3c4c7; */
+    padding-bottom: 8px;
+    margin-bottom: 5px;
+}
+
+.option input,
+.option select,
+.option textarea
+{
+    display: block;
+    width: 100%;
+    font: inherit;
+    border: none;
+    border: 1px solid #c3c4c7;
+    /* background: #f8f8f8; */
+    border-radius: 10px;
+    padding: 8px 13px;
+    margin-bottom: 15px;
+    color: #555;
+    font-weight: lighter;
+}
+
+.option input:focus,
+.option select:focus,
+.option textarea:focus
+{
+    outline: none;
+}
+
+.option textarea {
+    resize: vertical;
+}
+
+.option p {
+    margin-top: 0;
+}
+
+.option input[type="radio"], 
+.option input[type="checkbox"]
+{
+    width: auto;
+    margin: 0;
+    margin-right: 5px;
+}
+
+.option.input input{
+    margin-top: 6px;
+}
+
+.option.checks{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.option.select {
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.choice_options > div {
+    position: relative;
+    width: 100%;
+    font-weight: light;
+    /* padding: 5px;
+    padding-left: 10px; */
+    border: 1px solid #c3c4c7;
+    display: flex;
+    align-items: stretch;
+    margin-bottom: 3px;
+    /* margin-top: -1px; */
+}
+
+.choice_options > div input {
+    width: calc(100% - 40px);
+    border-radius: 0;
+    border: none;
+    margin-bottom: 0;
+    padding-left: 5px;
+}
+
+.handle{
+    width: 30px;
+}
+
+input.opt_selected{
+    display: none;
+    border: 1px solid #ccc !important;
+}
+
+.delete-option {
+    font-size: 15px;
+    color: #ccc;
+}
+
+/* Question Modal */
+
+.question-modal-wrap {
+    position: absolute;
+    top:0;bottom:0;width: 100%;
+    text-align: center;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 99999;
+}
+
+.question-modal-screen {
+    position: absolute;
+    top:0;bottom:0;width: 100%;
+    background: rgba(255, 255, 255, 0.85);
+}
+
+.question-modal{
+    position: relative;
+    background: whitesmoke;
+    border-radius: 5px;
+    padding: 20px;
+    height: 95%;
+    width: 70%;
+    min-width: 400px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    z-index: 99999;
+}
+
+.question-modal .wp-editor-wrap {
+    width: 100%;
+}
+.question-modal iframe {
+    min-height: 400px !important;
+}
+
+.modal-exit {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+}
+
+/* Form links ---------------------------------------*/
+
+.form-link-cont {
+    background: #fff;
+    width: 100%;
+    border: 2px solid #fff;
+    border-left: 6px solid #9FD6D9;
+    box-shadow: 1px 1px 5px -1px rgba(0,0,0,0.5);
+    padding: 22px;
+    max-width: 800px;
+
+    margin-bottom: 20px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    transition: all .3s ease;
+}
+
+.form-link-cont:hover {
+    border-color:#009EB1;
+    border-left: 9px solid #009EB1;
+}
+
+a .form-link-cont{
+    color: #009EB1 !important;
+}
+
+.form-link-cont.link-disabled {
+    background: whitesmoke !important;
+    border-left: 6px solid #ccc !important;
+}
+
+.form-link-cont:hover.link-disabled {
+    border-color:#fff !important;
+    border-left: 6px solid #ccc !important;
+}
+
+.form-link-cont.link-disabled h6,
+.form-link-cont.link-disabled span{
+    color: #ccc !important;
+}
+
+.form-link-cont.link-disabled p{
+    /* font-style: italic; */
+    color: #999 !important;
+}
+
+/* Utilities / MISC ---------------------------------------*/
+
+.dashicons-dismiss {
+    cursor: pointer;
+}
+
+.dashicons-dismiss:hover {
+    color: #bb0000;
+}
+
+.flex-center {
+    display: flex;
+    align-self: center;
+    justify-content: center;
+}
+
+.no-select * {
+    -webkit-user-select: none !important;  
+    -moz-user-select: none !important;    
+    -ms-user-select: none !important;      
+    user-select: none !important;
+  }
+  

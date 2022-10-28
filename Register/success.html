@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+    <link rel="stylesheet" href="success.css">
+  <head>
+    <meta charset="utf-8">
+    <title>Pop-Up Message</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    
+    <div class="container">
+      
+      <h1>You have successfully registered</h1>
+      
+      <hr>
+      
+      <p class="info">
+        Thank you for helping us help more lives.<br>
+If you know of communities, corporates, schools, colleges, churches, residential complexes where the
+South African National Blood Service can get new blood donors. Please help us by completing the form below.
+</p>
+
+
+<button type="button" class="collapsible"><center>Go back Home</center></button>
+<div class="content">
+<p>Lorem</p>
+
+</div>
+
+<script>
+  var coll = document.getElementsByClassName("collapsible");
+  var i;
+  
+  for (i = 0; i < coll.length; i++) {
+    coll[i].addEventListener("click", function() {
+      this.classList.toggle("active");
+      var content = this.nextElementSibling;
+      if (content.style.display === "block") {
+        content.style.display = "none";
+      } else {
+        content.style.display = "block";
+      }
+    });
+  }
+  </script>
+  
+
+      
+      
+    </div>
+    
+  </body>
+</html>
